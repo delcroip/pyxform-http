@@ -1,0 +1,11 @@
+version: "2.4"
+
+services:
+# Container
+  pyxform:
+    container_name: ${PROJECT_NAME:-pyxform-http}
+    build:
+      context: https://github.com/getodk/pyxform-http.git#${BE_BRANCH:-master}
+    restart: always
+    ports:
+     - 5001:80
